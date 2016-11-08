@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_text">Click</string>
+    <string name="test">test</string>
+    <string name="message">it works</string>
+</resources>
