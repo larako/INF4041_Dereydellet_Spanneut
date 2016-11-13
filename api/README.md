@@ -58,6 +58,8 @@ Server response if token is valid
 ```
 * Update user settings
 ```
+POST /api/set/settings
+
 {"token":"e6439969ca355b3c45362e7c37828240d688e7ee", "data": {"clock":"00-07", "tel":"0656784512|tel2|tel3"}}
 ```
 Server response if everything went great
