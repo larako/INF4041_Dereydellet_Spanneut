@@ -3,138 +3,138 @@
 
     <item
         is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.0_5daf09115785a4e6087fbcfb39ca5ac47661bbd9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.0_62456cf2c8bed6db3bbbe0e6b1c6e13db15bda09.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.0_5e3bb67648b37c64a62a562206fd2faa57401ebb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.0_c28fbc45d2e42119adf9399dc36af119b52d9116.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.0.0_bd34c196fcab7f8f42b6be934617ce16c93fe24f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_573c2ccfbb554cd95373b60296c7a08613807f39.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_dc0ea2d825d0814236501a8dff4f871d867eac10.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_e4b9fdaa98f4a46ae9cedc962b579d54ac0b39c4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\libs\internal_impl-25.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_f977f362b996836b8184a3b376dec2f940181145.jar" />
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_7849c3b4c3d834785739650fe9493a8dc7757600.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.0_2f0b3f5f3ac68ac998cc7892af5d266b97292123.jar" />
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.0.0_77c70a01c2ef5dfb5b627555fffa920987c200ac.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.0\jars\libs\internal_impl-25.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_a13f291fd0e94bc9f4b753c6803d54154298e0c7.jar" />
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_a06f5311a448cd53ee757cff2518d999d2364512.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.0_11074c12b401e735b1fa60713ce0b2b1b9708036.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.0_93767395a5d48596be20dc261211ac873c7ced28.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jar="C:\Users\cyril\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.0\support-annotations-25.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.0_c06e60514840e8c2bbfdaa60604f333daf07da26.jar" />
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\support-annotations-25.0.0_30ac4184ca2f8a4ca50334e98988934da111690d.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.0.0_c6a3be98df6892562583a3e2659665442a8a5eb0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_21f5aeb9ac89be4c69b8cc824d158b51e3d54db3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.0.0_80f7b5fac68f8b3443d56f6525cb430b5b66ebfc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/local/ETD-P/dereydellet/INF4041_Dereydellet_spanneut/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.0.0_18cd8cfe16caa635059e28f62c6408425b1f1a0f.jar" />
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.0.0_5b6ec7fd23605ab98f1cd8b2243a667a23405415.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.0.0_62e6c51c9a0386376caa91361e3c5b5de0f40dca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.0.0_a0bc3485feb96b5e138d6687ed73b54829cc8f4f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_5b217b79e02547c26f9962529f81bec4134a832c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.0.0_bb22341b9f966b63b0b0531b3c486d76a062d0e5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.0.0_6f9c0c749f1759681f6a4396094f8e02a39ecc97.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_f8673ac9a246d36aaf0ff5f2fe675b9c0bd37eb6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.0.0_f41dcf316a1909bc02a4d463a32700cac756a603.jar" />
     </item>
 
 </items>
