@@ -71,11 +71,33 @@ def register(data):
 	db = get_db()
 	if row_exists(db, 'users', 'username', data['username']):
 		return {"result":False, "msg":"Username already taken"}
-	db.execute("insert into users (username, password, email) values (?,?,?)", [data['username'],\
+	db.execute("INSERT INTO users (username, password, email) VALUES (?,?,?)", [data['username'],\
 		data['password'], data['email']])
 	db.commit()
 	return {"result":True}
 
+
+def get_user_settings(token):
+	try:
+		q = get_db().execute("SELECT user_settings FROM users_settings WHERE user_id = (SELECT id FROM users WHERE token = ?) ", [token])
+		data = q.fetchall()
+		if len(data) > 0:
+			return {"result":True, "data":json.loads(data[0][0])}
+		return {"result":False, "msg":"No settings"}
+	except sqlite3.Error as e:
+		print e
+		return {"result":False, "msg":e}
+
+
+def set_user_settings(token, settings):
+	try:
+		db = get_db()
+		q = db.execute("UPDATE users_settings SET user_settings = ? WHERE user_id = (SELECT id FROM users WHERE token = ?)", [(settings), token])
+		db.commit()
+		return {"result": True}
+	except sqlite3.Error as e:
+		print e
+		return {"result":False, "msg":"{}".format(e)}
 
 def random_token():
 	return urandom(20).encode('hex')

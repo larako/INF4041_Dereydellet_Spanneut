@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 import utils
 from json import dumps as jsonify
+from json import loads
 
 
 
@@ -11,9 +12,9 @@ def generate_token():
 	"""Generate a secure token for the user"""
 	user_info = request.get_json(force=True)
 	if not 'username' in user_info or not 'password' in user_info:
-		return render_template('json.html', content=jsonify({"result":"false", "msg":"'username' or/and 'password' is/are missing"}))
+		return render_template('json.html', content=jsonify({"result":False, "msg":"'username' or/and 'password' is/are missing"}))
 	if not utils.login(user_info):
-		return render_template('json.html', content=jsonify({"result":"false"}))
+		return render_template('json.html', content=jsonify({"result":False}))
 	token = utils.random_token()
 	db = utils.get_db()
 	while utils.row_exists(db, 'users', 'token', token):
@@ -28,6 +29,27 @@ def user_register():
 	if not 'username' in user_info or not 'password' in user_info or not 'email' in user_info:
 		return render_template('json.html', content=jsonify({"result":False, "msg":"Missing parameters"}))
 	return render_template('json.html', content=jsonify(utils.register(user_info)))
+
+@api.route('/api/show/settings', methods=['POST'])
+def show_settings():
+	data = request.get_json(force=True)
+	if not 'token' in data:
+		return render_template('json.html', jsonify({"result":False, "msg":"Missing parameter"}))
+	settings = utils.get_user_settings(data['token'])
+	return render_template('json.html', content=jsonify(settings))
+	
+@api.route('/api/set/settings', methods=['POST'])
+def set_settings():
+	data = request.get_json(force=True)
+	if not 'token' in data or not 'data' in data:
+		return render_template('json.html', content=jsonify({"result":False, "msg":"Missing parameter"}))
+	if not utils.row_exists(utils.get_db(), 'users', 'token', data['token']):
+		return render_template('json.html', content=jsonify({"result":False, "msg":"Invalid token"}))
+	settings = data['data']
+	if not 'clock' in settings or not 'tel' in settings:
+		return render_template('json.html', content=jsonify({"result":False, "msg":"Invalid settings"}))
+	r = utils.set_user_settings(str(data['token']),  jsonify(data['data']))
+	return render_template('json.html', content=jsonify(r) )
 
 @api.route('/api/test')
 def api_test():
