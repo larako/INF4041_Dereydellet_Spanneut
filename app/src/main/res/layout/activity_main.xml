@@ -34,17 +34,38 @@
         android:elevation="1dp"
         tools:headerAmPmTextAppearance="?attr/actionBarDivider" />
 
+    <TextView
+        android:text="veuillez sélectionner l'heure à laquelle vous voulez que ça se finisse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:id="@+id/textView3"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="ajout cotact à débloquer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/alarmTimePicker"
+        android:layout_toRightOf="@+id/toggleButton"
+        android:layout_toEndOf="@+id/toggleButton" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/toggleButton"
-        android:layout_toRightOf="@+id/toggleButton"
-        android:layout_toEndOf="@+id/toggleButton"
-        android:layout_marginLeft="66dp"
-        android:layout_marginStart="66dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="27dp"
         android:id="@+id/plus"
         android:onClick="clickContact"
-        android:background="@android:drawable/ic_input_add" />
+        android:background="@android:drawable/ic_input_add"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp" />
 
 </RelativeLayout>
