@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.provider.ContactsContract;
 import android.support.v4.app.NotificationCompat;
 import android.os.Bundle;
+import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +39,9 @@ public class MainActivity extends Activity {
     private ToggleButton toggleButton;
     private boolean ispush=false;
     private NotificationManager alarmNotificationManager;
+    private  TelephonyManager tel;
+    TeleListener listen;
+    //private TelephonyManager tel;
     static final int PICK_CONTACT_REQUEST = 1;  // The request code
 
     public static MainActivity instance() {
@@ -59,6 +63,8 @@ public class MainActivity extends Activity {
         //time.setBackgroundColor(Color.BLUE); pour changer la couleur
         //time.setScaleX(0.50f); pour changer la taille
         //time.setScaleY(0.50f);
+         tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        listen=new TeleListener(tel,ispush);
          toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
     }
@@ -70,7 +76,9 @@ public class MainActivity extends Activity {
             newTime.set(Calendar.HOUR_OF_DAY, time.getCurrentHour());
             newTime.set(Calendar.MINUTE, time.getCurrentMinute());
             ispush=true;
-             createNotification("blocage activé");
+            //TelephonyManager tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+            tel.listen(listen, TeleListener.LISTEN_CALL_STATE); //bloque
+            createNotification("blocage activé");
             Intent intent = new Intent(MainActivity.this, AlarmReceiver.class); //permet d'acceder a la classe alarmReceiver
             pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0); // permet de decaler le moment d'appeler la fct
             alarmManager.set(AlarmManager.RTC, newTime.getTimeInMillis(), pendingIntent); //cree l'alarme uand c'est finit
@@ -83,6 +91,8 @@ public class MainActivity extends Activity {
     public void cancel(){ // ce qui va annuler l'alarme
         alarmManager.cancel(pendingIntent);
         ispush=false;
+        //TelephonyManager tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        tel.listen(listen, TeleListener.LISTEN_NONE); //debloque
         //toggleButton.setText("Start");
         createNotification("END");
         setToast("désactivé");
