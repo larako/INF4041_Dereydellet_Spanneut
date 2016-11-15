@@ -10,18 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.soka.inf4041_dereydellet_spanneut.MainActivity">
 
-    <ToggleButton
-        android:text="ToggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:id="@+id/toggleButton"
-        android:textOff="start"
-        android:textOn="stop"
-        android:onClick="clickStart"
-        android:layout_below="@+id/alarmTimePicker"
-        android:layout_centerHorizontal="true" />
-
     <TimePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,38 +22,48 @@
         android:elevation="1dp"
         tools:headerAmPmTextAppearance="?attr/actionBarDivider" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/plus"
+        android:onClick="clickContact"
+        android:background="@android:drawable/ic_input_add"
+        android:elevation="21dp"
+        android:layout_above="@+id/toggleButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="ajout contact à débloquer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_below="@+id/plus"
+        android:layout_toRightOf="@+id/toggleButton"
+        android:layout_toEndOf="@+id/toggleButton" />
+
+    <ToggleButton
+        android:text="ToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toggleButton"
+        android:textOff="start"
+        android:textOn="stop"
+        android:onClick="clickStart"
+        android:layout_below="@+id/alarmTimePicker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp" />
+
     <TextView
         android:text="veuillez sélectionner l'heure à laquelle vous voulez que ça se finisse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
         android:id="@+id/textView3"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="ajout cotact à débloquer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:layout_marginLeft="44dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="21dp"
-        android:layout_below="@+id/alarmTimePicker"
-        android:layout_toRightOf="@+id/toggleButton"
-        android:layout_toEndOf="@+id/toggleButton" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="29dp"
-        android:id="@+id/plus"
-        android:onClick="clickContact"
-        android:background="@android:drawable/ic_input_add"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp" />
+        android:layout_below="@+id/toggleButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp" />
 
 </RelativeLayout>

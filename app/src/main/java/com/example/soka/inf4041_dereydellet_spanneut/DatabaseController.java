@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteStatement;
 
 public class DatabaseController {
 
-    private final String DB_NAME = "../../../../../settings.sqlite";
+    private final String DB_NAME = "settings.sqlite";
     private SQLiteDatabase db;
 
     public DatabaseController() {
