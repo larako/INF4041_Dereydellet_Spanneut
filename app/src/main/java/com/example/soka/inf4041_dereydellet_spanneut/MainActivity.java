@@ -93,7 +93,7 @@ public class MainActivity extends Activity {
                 newTime.set(Calendar.DAY_OF_MONTH,mDay+1); //si l'heure choisit est inferieur a cl'heure actuelle alors on ajoute 1 au jour de l'alarme
             }
             ispush=true;
-            toggleButton.setText("start");
+            toggleButton.setText("stop");
             //TelephonyManager tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
             tel.listen(listen, TeleListener.LISTEN_CALL_STATE); //bloque
             createNotification("blocage activé");
@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
             alarmManager.set(AlarmManager.RTC, newTime.getTimeInMillis(), pendingIntent); //cree l'alarme uand c'est finit
 
         } else {
-            toggleButton.setText("stop");
+            toggleButton.setText("start");
             cancel();
         }
     }
