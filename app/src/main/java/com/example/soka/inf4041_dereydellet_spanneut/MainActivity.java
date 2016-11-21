@@ -83,7 +83,6 @@ public class MainActivity extends Activity {
         /*
             Objet database
         */
-         */
         db = new DatabaseController(getApplicationContext());
         //DatabaseController db = new DatabaseController();
         //app_is_up = db.getSettingByName("block_status");
@@ -173,22 +172,34 @@ public class MainActivity extends Activity {
     }
 
 
-    public void createNotification(String message){
+    public void createNotification(String message) {
 
         alarmNotificationManager = (NotificationManager) this
                 .getSystemService(Context.NOTIFICATION_SERVICE);
 
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
                 new Intent(this, MainActivity.class), 0);
+        if (ispush == true) {
+            NotificationCompat.Builder alamNotificationBuilder = new NotificationCompat.Builder(
+                    this).setContentTitle("Alarm").setSmallIcon(R.drawable.vert)
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(message))
+                    .setContentText(message)
+                    .setOngoing(true);
 
-        NotificationCompat.Builder alamNotificationBuilder = new NotificationCompat.Builder(
-                this).setContentTitle("Alarm").setSmallIcon(R.mipmap.ic_launcher)
-                .setStyle(new NotificationCompat.BigTextStyle().bigText(message))
-                .setContentText(message);
+
+            alamNotificationBuilder.setContentIntent(contentIntent);
+            alarmNotificationManager.notify(1, alamNotificationBuilder.build());
+        }
+        if(ispush==false){
+            NotificationCompat.Builder alamNotificationBuilder = new NotificationCompat.Builder(
+                    this).setContentTitle("Alarm").setSmallIcon(R.drawable.rouge)
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(message))
+                    .setContentText(message);
 
 
-        alamNotificationBuilder.setContentIntent(contentIntent);
-        alarmNotificationManager.notify(1, alamNotificationBuilder.build());
+            alamNotificationBuilder.setContentIntent(contentIntent);
+            alarmNotificationManager.notify(1, alamNotificationBuilder.build());
+        }
     }
 
     public boolean IsPush(){
