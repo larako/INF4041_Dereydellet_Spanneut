@@ -29,6 +29,7 @@ import android.widget.ToggleButton;
 
 import java.lang.reflect.Method;
 import java.util.Calendar;
+import java.util.List;
 
 public class MainActivity extends Activity {
 
@@ -92,8 +93,11 @@ public class MainActivity extends Activity {
         if (((ToggleButton) view).isChecked()) {
             setToast("activé");
             //Log.d("STATE", "STATUS BEFORE " + db.getSettingByName(("block_status")));
-            db.updateSettingByName("block_status", "started");
+            //db.updateSettingByName("block_status", "started");
             //Log.d("STATE", "STATUS AFTER " + db.getSettingByName(("block_status")));
+            //Log.d("STATE", "SHA1(toto) = " + APIClient.sha1("toto").toLowerCase());
+            //Log.d("STATE", "Result: " + APIClient.getJSON("http://api.mobile.crashlab.org"));
+            test();
             Calendar newTime = Calendar.getInstance(); // pour recuperer lheure
             mhour= newTime.get(Calendar.HOUR_OF_DAY);
             mDay = newTime.get(Calendar.DAY_OF_MONTH);
@@ -204,6 +208,19 @@ public class MainActivity extends Activity {
 
     public boolean IsPush(){
         return ispush;
+    }
+
+    public void test() {
+        //db.addNumber("0787878787");
+        List<String> nums = db.getAllNumbers();
+        for (String num : nums) {
+            Log.d("STATE BEFORE", num);
+        }
+        db.removeNumber("0102030405");
+        nums = db.getAllNumbers();
+        for (String num : nums) {
+            Log.d("STATE AFTER", num);
+        }
     }
 
 }

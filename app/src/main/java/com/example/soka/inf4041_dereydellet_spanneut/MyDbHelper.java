@@ -20,10 +20,11 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE phones (number text)");
         db.execSQL("CREATE TABLE settings (" +
                 "setting_name text, " +
                 "setting_value text)");
-        db.execSQL("INSERT INTO settings (setting_name, setting_value) values ('token', 'token_value'), ('phones', 'phones_list'), ('time_slot', 'time_slot_value'), ('block_status', 'block_status_value')");
+        db.execSQL("INSERT INTO settings (setting_name, setting_value) values ('token', 'token_value'), ('phones', 'phones_list'), ('time_slot', 'time_slot_value'), ('block_status', 'start')");
     }
 
     @Override
