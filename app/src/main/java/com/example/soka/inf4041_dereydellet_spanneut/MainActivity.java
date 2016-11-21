@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
     private Intent intent;
     private static MainActivity inst;
     private TextView alarmTextView;
-    private ToggleButton toggleButton;
+    private Button buttonStart;
     public boolean ispush=false;
     private NotificationManager alarmNotificationManager;
     private  TelephonyManager tel;
@@ -78,19 +78,20 @@ public class MainActivity extends Activity {
          tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         listen=new TeleListener(tel,audioManager);
 
-         toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
+         buttonStart = (Button) findViewById(R.id.buttonStart);
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         /*
             Objet database
         */
         db = new DatabaseController(getApplicationContext());
-        //DatabaseController db = new DatabaseController();
-        //app_is_up = db.getSettingByName("block_status");
+        app_is_up = db.getSettingByName("block_status");
+        buttonStart.setText(app_is_up);
+        app_is_up=app_is_up.intern();
     }
 
     public void clickStart(View view) { //permet de start l'appli
-        if (((ToggleButton) view).isChecked()) {
+        if (app_is_up=="start") {
             setToast("activé");
             //Log.d("STATE", "STATUS BEFORE " + db.getSettingByName(("block_status")));
             //db.updateSettingByName("block_status", "started");
@@ -98,6 +99,9 @@ public class MainActivity extends Activity {
             //Log.d("STATE", "SHA1(toto) = " + APIClient.sha1("toto").toLowerCase());
             //Log.d("STATE", "Result: " + APIClient.getJSON("http://api.mobile.crashlab.org"));
             test();
+            db.updateSettingByName("block_status","stop");
+            app_is_up = db.getSettingByName("block_status");
+            app_is_up=app_is_up.intern();
             Calendar newTime = Calendar.getInstance(); // pour recuperer lheure
             mhour= newTime.get(Calendar.HOUR_OF_DAY);
             mDay = newTime.get(Calendar.DAY_OF_MONTH);
@@ -108,7 +112,7 @@ public class MainActivity extends Activity {
                 newTime.set(Calendar.DAY_OF_MONTH,mDay+1); //si l'heure choisit est inferieur a cl'heure actuelle alors on ajoute 1 au jour de l'alarme
             }
             ispush=true;
-            toggleButton.setText("stop");
+            buttonStart.setText(app_is_up);
             //TelephonyManager tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
             tel.listen(listen, TeleListener.LISTEN_CALL_STATE); //bloque
             createNotification("blocage activé");
@@ -116,7 +120,6 @@ public class MainActivity extends Activity {
             alarmManager.set(AlarmManager.RTC, newTime.getTimeInMillis(), pendingIntent); //cree l'alarme uand c'est finit
 
         } else {
-            toggleButton.setText("start");
             cancel();
         }
     }
@@ -127,6 +130,10 @@ public class MainActivity extends Activity {
         //TelephonyManager tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         tel.listen(listen, TeleListener.LISTEN_NONE); //debloque
         //toggleButton.setText("Start");
+        db.updateSettingByName("block_status","start");
+        app_is_up = db.getSettingByName("block_status");
+        app_is_up=app_is_up.intern();
+        buttonStart.setText(app_is_up);
         createNotification("END");
         setToast("désactivé");
     }
@@ -162,6 +169,7 @@ public class MainActivity extends Activity {
                 String number = cursor.getString(column);
 
                 setToast("contact ajouté");
+                db.addNumber(number);
                 //db.updateSettingByName("phones",number);
                     //et la on ajoute ce numero à la liste des gens autorisés
             }
