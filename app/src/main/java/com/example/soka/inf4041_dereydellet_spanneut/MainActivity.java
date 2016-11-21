@@ -45,6 +45,9 @@ public class MainActivity extends Activity {
     private String app_is_up;
     private int  mDay,mhour, mMinute;
     TeleListener listen;
+
+    // Database connect
+    DatabaseController db;
     //private TelephonyManager tel;
     static final int PICK_CONTACT_REQUEST = 1;  // The request code
 
@@ -76,6 +79,12 @@ public class MainActivity extends Activity {
 
          toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        /*
+            Objet database
+        */
+         */
+        db = new DatabaseController(getApplicationContext());
         //DatabaseController db = new DatabaseController();
         //app_is_up = db.getSettingByName("block_status");
     }
@@ -83,6 +92,9 @@ public class MainActivity extends Activity {
     public void clickStart(View view) { //permet de start l'appli
         if (((ToggleButton) view).isChecked()) {
             setToast("activé");
+            //Log.d("STATE", "STATUS BEFORE " + db.getSettingByName(("block_status")));
+            db.updateSettingByName("block_status", "started");
+            //Log.d("STATE", "STATUS AFTER " + db.getSettingByName(("block_status")));
             Calendar newTime = Calendar.getInstance(); // pour recuperer lheure
             mhour= newTime.get(Calendar.HOUR_OF_DAY);
             mDay = newTime.get(Calendar.DAY_OF_MONTH);
