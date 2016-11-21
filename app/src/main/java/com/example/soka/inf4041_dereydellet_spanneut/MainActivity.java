@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
         AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
          tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        listen=new TeleListener(tel,audioManager);
+        listen=new TeleListener(tel,audioManager,getApplicationContext());
 
          buttonStart = (Button) findViewById(R.id.buttonStart);
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
@@ -138,6 +138,11 @@ public class MainActivity extends Activity {
         setToast("désactivé");
     }
 
+    public void dropClick(View v){
+        Intent i = new Intent(MainActivity.this, SecondActivity.class);
+        startActivity(i);
+    }
+
     public void clickContact(View v){ //permet de selectionner un contact
         Intent pickContactIntent = new Intent(Intent.ACTION_PICK, Uri.parse("content://contacts"));
         pickContactIntent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE); // Show user only contacts w/ phone numbers
@@ -166,12 +171,12 @@ public class MainActivity extends Activity {
 
                 // Retrieve the phone number from the NUMBER column
                 int column = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
+                int columName= cursor.getColumnIndex(ContactsContract.CommonDataKinds.Nickname.NAME);
                 String number = cursor.getString(column);
-
+                String name= cursor.getString(columName);
+                //et la on ajoute ce numero à la liste des gens autorisés
                 setToast("contact ajouté");
                 db.addNumber(number);
-                //db.updateSettingByName("phones",number);
-                    //et la on ajoute ce numero à la liste des gens autorisés
             }
         }
     }

@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/plus"
         android:onClick="clickContact"
-        android:background="@android:drawable/ic_input_add"
+        android:background="@android:drawable/btn_plus"
         android:elevation="21dp"
         android:layout_above="@+id/textView"
         android:layout_alignParentRight="true"
@@ -55,9 +55,19 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/moins"
+        android:background="@android:drawable/btn_minus"
+        android:layout_alignBottom="@+id/alarmTimePicker"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="dropClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/buttonStart"
-        android:layout_below="@+id/alarmTimePicker"
-        android:layout_centerHorizontal="true"
-        android:onClick="clickStart" />
+        android:onClick="clickStart"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

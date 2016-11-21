@@ -39,6 +39,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.0_62e6c51c9a0386376caa91361e3c5b5de0f40dca\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.0\jars\libs\internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
@@ -54,42 +63,6 @@
         revision="25.0.0"
         sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
         <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.0_77c70a01c2ef5dfb5b627555fffa920987c200ac\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.0_80f7b5fac68f8b3443d56f6525cb430b5b66ebfc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9ceb1d37cb8c66333d1af6d7fb639c09776ebe5c">
-        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_1a962711863e9acdf21a0f3a76364d952b759065\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\libs\internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_7849c3b4c3d834785739650fe9493a8dc7757600\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.0_62e6c51c9a0386376caa91361e3c5b5de0f40dca\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -133,7 +106,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="9d6339458efbea753daf700f3e45f708284b9b63">
+        sha1="bfd6303eef4c2ff9b8f591dbef8ca7bde15d2221">
         <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_84fb8dfa5028a749f7e58f53afea11efc3a56d44\classes.dex" />
     </item>
     <item
@@ -147,12 +120,39 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.0_80f7b5fac68f8b3443d56f6525cb430b5b66ebfc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="337b8197b9f0dc6bc12b331513d6099b29df3dcf">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_1a962711863e9acdf21a0f3a76364d952b759065\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\libs\internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
         <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_f8673ac9a246d36aaf0ff5f2fe675b9c0bd37eb6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="C:\Users\cyril\AndroidStudioProjects\CustomCallBlocker\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_7849c3b4c3d834785739650fe9493a8dc7757600\classes.dex" />
     </item>
 
 </items>
