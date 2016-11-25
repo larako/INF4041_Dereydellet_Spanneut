@@ -20,7 +20,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE phones (number text)");
+        db.execSQL("CREATE TABLE phones (number text, name text)");
         db.execSQL("CREATE TABLE settings (" +
                 "setting_name text, " +
                 "setting_value text)");

@@ -11,6 +11,7 @@ import android.telephony.TelephonyManager;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
 import java.util.List;
 
 import com.android.internal.telephony.ITelephony;
@@ -24,6 +25,7 @@ public class TeleListener extends PhoneStateListener {
     private  AudioManager audioManager;
     private Context context;
     private DatabaseController db;
+    private HashMap<String, String> contact_info = new HashMap<String, String>(); // (num, name)
     private List<String> nums;
 
     public TeleListener(TelephonyManager tel, AudioManager audioManager, Context context){
@@ -48,7 +50,8 @@ public class TeleListener extends PhoneStateListener {
             case TelephonyManager.CALL_STATE_RINGING:
                 // CALL_STATE_RINGING
                 db = new DatabaseController(context);
-                nums = db.getAllNumbers();
+                contact_info = db.getAllNumbers();
+                nums = Utils.getAllKeysFromHashMap(contact_info);
 
                 Class c = null;
                     try {

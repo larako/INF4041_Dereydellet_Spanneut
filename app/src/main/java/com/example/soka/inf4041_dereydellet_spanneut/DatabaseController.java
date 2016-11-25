@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -27,7 +28,14 @@ public class DatabaseController {
         db = dbHelper.getWritableDatabase();
     }
 
+    public void checkDbisAlive() {
+        if (!db.isOpen()) {
+            db = dbHelper.getWritableDatabase();
+        }
+    }
+
     public String getSettingByName(String setting_name) {
+        checkDbisAlive();
         SQLiteStatement stmt = this.db.compileStatement("SELECT setting_value FROM settings WHERE setting_name = ?");
         stmt.bindString(1, setting_name);
         return stmt.simpleQueryForString();
@@ -35,6 +43,7 @@ public class DatabaseController {
 
     public void updateSettingByName(String setting_name, String value) {
         try {
+            checkDbisAlive();
             db.beginTransaction();
             SQLiteStatement stmt = this.db.compileStatement("UPDATE settings SET setting_value = ? WHERE setting_name = ?");
             Log.w("SQLITE", " UPDATE OK");
@@ -51,11 +60,13 @@ public class DatabaseController {
         }
     }
 
-    public void addNumber(String num) {
+    public void addNumber(String num, String name) {
         try {
+            checkDbisAlive();
             db.beginTransaction();
-            SQLiteStatement stmt = this.db.compileStatement("INSERT INTO phones(number) VALUES (?)");
+            SQLiteStatement stmt = this.db.compileStatement("INSERT INTO phones(number, name) VALUES (?,?)");
             stmt.bindString(1, num);
+            stmt.bindString(2, name);
             stmt.executeInsert();
             db.setTransactionSuccessful();
         }
@@ -67,20 +78,23 @@ public class DatabaseController {
         }
     }
 
-    public List<String> getAllNumbers() {
-        String[] columnToReturn = {"number"};
+    public HashMap<String, String> getAllNumbers() {
+        checkDbisAlive();
+        String[] columnToReturn = {"number", "name"};
         Cursor cur = db.query("phones", columnToReturn, null, null, null, null, null);
-        List<String> nums = new ArrayList<>();
+        HashMap<String, String> data = new HashMap<String, String>();
         if (cur.moveToFirst()) {
             do {
-                nums.add(cur.getString(cur.getColumnIndex("number")));
+                data.put(cur.getString(cur.getColumnIndex("number")), cur.getString(cur.getColumnIndex("name")));
+                Log.d("GETALLNUMBERS", "Num: " + cur.getString(cur.getColumnIndex("number")) + " Name: " + cur.getString(cur.getColumnIndex("name")));
             } while (cur.moveToNext());
         }
-        return nums;
+        return data;
     }
 
     public void removeNumber(String num) {
         try {
+            checkDbisAlive();
             db.beginTransaction();
             SQLiteStatement stmt = this.db.compileStatement("DELETE FROM phones WHERE number = ?");
             stmt.bindString(1, num);
@@ -92,6 +106,15 @@ public class DatabaseController {
         }
         finally {
             db.endTransaction();
+        }
+    }
+
+    public void close() {
+        try {
+            if (db.isOpen())
+                db.close();
+        }catch (Exception e) {
+            Log.w("SQLITE", "Exception on close: " + e);
         }
     }
 }

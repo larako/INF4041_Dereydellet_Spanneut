@@ -86,6 +86,7 @@ public class MainActivity extends Activity {
         */
         db = new DatabaseController(getApplicationContext());
         app_is_up = db.getSettingByName("block_status");
+        db.close();
         buttonStart.setText(app_is_up);
         app_is_up=app_is_up.intern();
     }
@@ -98,9 +99,12 @@ public class MainActivity extends Activity {
             //Log.d("STATE", "STATUS AFTER " + db.getSettingByName(("block_status")));
             //Log.d("STATE", "SHA1(toto) = " + APIClient.sha1("toto").toLowerCase());
             //Log.d("STATE", "Result: " + APIClient.getJSON("http://api.mobile.crashlab.org"));
-            test();
+            //test();
+            db = new DatabaseController(getApplicationContext());
             db.updateSettingByName("block_status","stop");
             app_is_up = db.getSettingByName("block_status");
+            db.close();
+
             app_is_up=app_is_up.intern();
             Calendar newTime = Calendar.getInstance(); // pour recuperer lheure
             mhour= newTime.get(Calendar.HOUR_OF_DAY);
@@ -130,7 +134,10 @@ public class MainActivity extends Activity {
         //TelephonyManager tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         tel.listen(listen, TeleListener.LISTEN_NONE); //debloque
         //toggleButton.setText("Start");
+        db = new DatabaseController(getApplicationContext());
         db.updateSettingByName("block_status","start");
+        db.close();
+
         app_is_up = db.getSettingByName("block_status");
         app_is_up=app_is_up.intern();
         buttonStart.setText(app_is_up);
@@ -159,6 +166,7 @@ public class MainActivity extends Activity {
                 Uri contactUri = data.getData();
                 // We only need the NUMBER column, because there will be only one row in the result
                 String[] projection = {ContactsContract.CommonDataKinds.Phone.NUMBER};
+                String[] projection2 = {ContactsContract.CommonDataKinds.Phone.NAME_RAW_CONTACT_ID};
 
                 // Perform the query on the contact to get the NUMBER column
                 // We don't need a selection or sort order (there's only one result for the given URI)
@@ -169,14 +177,19 @@ public class MainActivity extends Activity {
                         .query(contactUri, projection, null, null, null);
                 cursor.moveToFirst();
 
+                Cursor cursor2 = getContentResolver()
+                        .query(contactUri, projection2, null, null, null);
+                cursor2.moveToFirst();
+
                 // Retrieve the phone number from the NUMBER column
                 int column = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-                int columName= cursor.getColumnIndex(ContactsContract.CommonDataKinds.Nickname.NAME);
+                int columName = cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Identity.NAMESPACE);
                 String number = cursor.getString(column);
-                String name= cursor.getString(columName);
+                String name = cursor.getString(columName);
+                Log.d("AJOUTCONTACT", "Num: " + number + " Name: " + name);
                 //et la on ajoute ce numero à la liste des gens autorisés
                 setToast("contact ajouté");
-                db.addNumber(number);
+                db.addNumber(number, name);
             }
         }
     }
@@ -223,9 +236,13 @@ public class MainActivity extends Activity {
         return ispush;
     }
 
+    /*
     public void test() {
         //db.addNumber("0787878787");
+        db = new DatabaseController(getApplicationContext());
         List<String> nums = db.getAllNumbers();
+        db.close();
+
         for (String num : nums) {
             Log.d("STATE BEFORE", num);
         }
@@ -235,5 +252,6 @@ public class MainActivity extends Activity {
             Log.d("STATE AFTER", num);
         }
     }
+    */
 
 }
