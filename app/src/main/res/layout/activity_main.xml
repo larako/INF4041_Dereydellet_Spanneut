@@ -34,16 +34,6 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="veuillez sélectionner l'heure à laquelle vous voulez que ça se finisse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:layout_marginTop="66dp"
-        android:layout_below="@+id/plus"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
         android:text="ajout contact à débloquer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,19 +45,39 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/moins"
-        android:background="@android:drawable/btn_minus"
-        android:layout_alignBottom="@+id/alarmTimePicker"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="dropClick" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/buttonStart"
         android:onClick="clickStart"
         android:layout_alignBottom="@+id/textView"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="retirer contact de la liste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonStart"
+        android:layout_alignRight="@+id/moins"
+        android:layout_alignEnd="@+id/moins"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/alarmTimePicker" />
+
+    <TextView
+        android:text="veuillez sélectionner l'heure à laquelle vous voulez que ça se finisse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/moins"
+        android:background="@android:drawable/btn_minus"
+        android:onClick="dropClick"
+        android:layout_above="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

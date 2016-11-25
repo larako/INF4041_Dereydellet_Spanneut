@@ -119,7 +119,11 @@ public class MainActivity extends Activity {
             buttonStart.setText(app_is_up);
             //TelephonyManager tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
             tel.listen(listen, TeleListener.LISTEN_CALL_STATE); //bloque
-            createNotification("blocage activé");
+            if (time.getCurrentMinute()<10)
+                createNotification("blocage activé jusqu'à: "+time.getCurrentHour()+":0"+time.getCurrentMinute());
+            else
+                createNotification("blocage activé jusqu'à: "+time.getCurrentHour()+":"+time.getCurrentMinute());
+
             pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0); // permet de decaler le moment d'appeler la fct
             alarmManager.set(AlarmManager.RTC, newTime.getTimeInMillis(), pendingIntent); //cree l'alarme uand c'est finit
 
@@ -166,7 +170,7 @@ public class MainActivity extends Activity {
                 Uri contactUri = data.getData();
                 // We only need the NUMBER column, because there will be only one row in the result
                 String[] projection = {ContactsContract.CommonDataKinds.Phone.NUMBER};
-                String[] projection2 = {ContactsContract.CommonDataKinds.Phone.NAME_RAW_CONTACT_ID};
+
 
                 // Perform the query on the contact to get the NUMBER column
                 // We don't need a selection or sort order (there's only one result for the given URI)
@@ -177,19 +181,23 @@ public class MainActivity extends Activity {
                         .query(contactUri, projection, null, null, null);
                 cursor.moveToFirst();
 
-                Cursor cursor2 = getContentResolver()
-                        .query(contactUri, projection2, null, null, null);
-                cursor2.moveToFirst();
-
                 // Retrieve the phone number from the NUMBER column
                 int column = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-                int columName = cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Identity.NAMESPACE);
                 String number = cursor.getString(column);
-                String name = cursor.getString(columName);
+
+                Uri uri = Uri.withAppendedPath(ContactsContract.PhoneLookup.CONTENT_FILTER_URI, Uri.encode(number));
+                String[] projection2 = {ContactsContract.PhoneLookup.DISPLAY_NAME};
+                Cursor cursor2 = getContentResolver().query(uri, projection2, null, null, null);
+                cursor2.moveToFirst();
+                String name = cursor2.getString(cursor2.getColumnIndex(ContactsContract.PhoneLookup.DISPLAY_NAME));
+
                 Log.d("AJOUTCONTACT", "Num: " + number + " Name: " + name);
                 //et la on ajoute ce numero à la liste des gens autorisés
                 setToast("contact ajouté");
                 db.addNumber(number, name);
+                db.close();
+                cursor2.close();
+                cursor.close();
             }
         }
     }

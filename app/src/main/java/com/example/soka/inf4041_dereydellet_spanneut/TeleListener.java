@@ -27,6 +27,7 @@ public class TeleListener extends PhoneStateListener {
     private DatabaseController db;
     private HashMap<String, String> contact_info = new HashMap<String, String>(); // (num, name)
     private List<String> nums;
+    private boolean ok =false;
 
     public TeleListener(TelephonyManager tel, AudioManager audioManager, Context context){
         this.tel=tel;
@@ -52,13 +53,17 @@ public class TeleListener extends PhoneStateListener {
                 db = new DatabaseController(context);
                 contact_info = db.getAllNumbers();
                 nums = Utils.getAllKeysFromHashMap(contact_info);
-
+                db.close();
                 Class c = null;
                     try {
                         for (String num: nums) {
-                            num=num.intern();
-                            incomingNumber=incomingNumber.intern();
-                            if (incomingNumber != num) { //ici on mettra les numéros enregistrés
+                            num = num.intern();
+                            incomingNumber = incomingNumber.intern();
+                            if (incomingNumber == num) {
+                                ok = true;
+                            }
+                        }
+                            if (ok ==false) { //ici on mettra les numéros enregistrés
                                 // audioManager.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
                                 c = Class.forName(tel.getClass().getName());
                                 Method method = c.getDeclaredMethod("getITelephony");
@@ -69,7 +74,8 @@ public class TeleListener extends PhoneStateListener {
                                 telService.endCall();
                                inst.setToast(incomingNumber);
                             }
-                        }
+                        ok=false;
+
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 } catch (NoSuchMethodException e) {
@@ -79,7 +85,6 @@ public class TeleListener extends PhoneStateListener {
                 } catch (InvocationTargetException e) {
                     e.printStackTrace();
                 }
-
                 break;
             default:
                 break;
