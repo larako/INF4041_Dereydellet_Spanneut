@@ -7,20 +7,24 @@ from json import loads
 
 api = Blueprint('api', __name__)
 
-@api.route('/api/generate-token', methods=['POST'])
-def generate_token():
+
+
+@api.route('/api/generate-token/<username>/<password>', methods=['GET'])
+def generate_token(username, password):
 	"""Generate a secure token for the user"""
-	user_info = request.get_json(force=True)
-	if not 'username' in user_info or not 'password' in user_info:
-		return render_template('json.html', content=jsonify({"result":False, "msg":"'username' or/and 'password' is/are missing"}))
-	if not utils.login(user_info):
+	data = {"username":username, "password":password}
+	if not utils.login(data):
 		return render_template('json.html', content=jsonify({"result":False}))
 	token = utils.random_token()
 	db = utils.get_db()
 	while utils.row_exists(db, 'users', 'token', token):
 		token = utils.random_token()
-	utils.update('users', 'username = ? and password = ?', ['token'], [token, user_info['username'], user_info['password']])
+	utils.update('users', 'username = ? and password = ?', ['token'], [token, username, password])
 	return render_template('json.html', content=jsonify({"result":True, "token": token}))
+
+@api.route('/api/show-users', methods=['GET'])
+def show_users():
+	return render_template('users.json')
 
 
 @api.route('/api/register', methods=['POST'])

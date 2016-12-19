@@ -1,4 +1,4 @@
-package com.example.soka.inf4041_dereydellet_spanneut;
+package com.example.soka.loginme;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.soka.inf4041_dereydellet_spanneut", appContext.getPackageName());
+        assertEquals("com.example.soka.loginme", appContext.getPackageName());
     }
 }

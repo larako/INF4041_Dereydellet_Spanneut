@@ -37,7 +37,7 @@ Server response if successful registration
 *Generate a secure token for user, it will be used to process API actions*
 
 ```
- POST /api/generate-token
+GET /api/generate-token/username/password
 
  {"username":"toto","password":"0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c"}
 ```

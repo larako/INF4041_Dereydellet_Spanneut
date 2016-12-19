@@ -1,4 +1,4 @@
-package com.example.soka.inf4041_dereydellet_spanneut;
+package com.example.soka.loginme;
 
 import org.junit.Test;
 

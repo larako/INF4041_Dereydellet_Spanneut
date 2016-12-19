@@ -1,16 +1,16 @@
-package com.example.soka.inf4041_dereydellet_spanneut;
+package com.example.soka.loginme;
+
+/**
+ * Created by soka on 19/12/16.
+ */
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 
 import android.util.Log;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * Created by soka on 11/14/16.
