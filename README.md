@@ -1,5 +1,5 @@
 #LoginMeToMyAPI
-Ce projet cloné à part de https://github.com/sokaRepo/android
+Ce projet est cloné à partir de https://github.com/sokaRepo/android
 ###Mobile App
 Application mobile pour téléphones Android. L'application permet de se connecter à l'API développée (/api).
 
